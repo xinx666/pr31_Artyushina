@@ -8,9 +8,8 @@ import com.example.pr31_artyushina.data.model.User
 
 @Dao
 interface UserDao {
-    @Query("SELECT * FROM User WHERE email = :email AND password = :password")
-    suspend fun login(email: String, password: String): User?
-
+    @Query("SELECT * FROM User")
+    suspend fun getAll(): List<User>
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(users: List<User>)
+    suspend fun insertAll(vararg users: User)
 }

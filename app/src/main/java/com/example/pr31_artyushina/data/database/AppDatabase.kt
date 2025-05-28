@@ -9,6 +9,7 @@ import com.example.pr31_artyushina.data.model.User
 @Database(entities = [User::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
+    abstract fun shoeDao(): ShoeDao
 
     companion object {
         private var INSTANCE: AppDatabase? = null
