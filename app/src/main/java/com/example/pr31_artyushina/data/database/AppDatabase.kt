@@ -10,6 +10,7 @@ import com.example.pr31_artyushina.data.model.User
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun shoeDao(): ShoeDao
+    abstract fun productDao(): ProductDao
 
     companion object {
         private var INSTANCE: AppDatabase? = null
